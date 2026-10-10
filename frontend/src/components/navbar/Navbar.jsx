@@ -29,7 +29,7 @@ function Navbar() {
     });
 
     // Navigate to login page using React Router
-    navigate("/login");
+    navigate("/");
   };
   const cartItems = useSelector((state) => state.cart);
 
