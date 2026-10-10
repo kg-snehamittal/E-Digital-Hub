@@ -48,7 +48,7 @@ const formatDate = (d) =>
   d.toLocaleString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
 
 async function seedData() {
-  const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/ecom1';
+  const mongoUri = process.env.MONGODB_URI ;
   await mongoose.connect(mongoUri);
   console.log(`Connected to MongoDB for full database seed: ${mongoUri}`);
 

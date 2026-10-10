@@ -12,7 +12,7 @@ const ADMIN_DETAILS = {
 };
 
 async function createAdmin() {
-  const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/ecom1';
+  const mongoUri = process.env.MONGODB_URI;
   console.log(`Connecting to MongoDB at: ${mongoUri}`);
 
   await mongoose.connect(mongoUri);
