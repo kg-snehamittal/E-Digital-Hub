@@ -28,8 +28,9 @@ function Navbar() {
       autoClose: 3000, // Close the popup after 3 seconds
     });
 
-    // Navigate to login page using React Router
+    // Directly re-render to dashboard
     navigate("/");
+    navigate(0);
   };
   const cartItems = useSelector((state) => state.cart);
 

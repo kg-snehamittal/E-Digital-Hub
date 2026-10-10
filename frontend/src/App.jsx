@@ -34,11 +34,7 @@ function App() {
             </ProtectedRoute>
           } />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/dashboard" element={
-            <ProtectedRouteForAdmin>
-              <Dashboard />
-            </ProtectedRouteForAdmin>
-          } />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>} />
           <Route path='/productinfo/:id' element={<ProductInfo/>} />
