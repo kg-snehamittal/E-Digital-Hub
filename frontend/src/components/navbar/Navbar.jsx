@@ -2,13 +2,14 @@ import React, { Fragment, useContext, useState } from "react";
 import myContext from "../../context/data/myContext";
 import { IoMoonSharp } from "react-icons/io5";
 import { FiSun } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function Navbar() {
+  const navigate = useNavigate();
   const context = useContext(myContext);
   const { mode, toggleMode } = context;
 
@@ -19,7 +20,7 @@ function Navbar() {
   // console.log(user.user.email)
 
   const logout = () => {
-    localStorage.clear("user");
+    localStorage.removeItem("user");
 
     // Display the "Logout Successful" popup
     toast.success("Logout Successful!", {
@@ -27,8 +28,8 @@ function Navbar() {
       autoClose: 3000, // Close the popup after 3 seconds
     });
 
-    // Redirect to login page after logout
-    window.location.href = "/login";
+    // Navigate to login page using React Router
+    navigate("/login");
   };
   const cartItems = useSelector((state) => state.cart);
 
